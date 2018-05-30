@@ -58,7 +58,7 @@ a {
 ------------------------------------------------------------*/
 header {
   .header-image{
-    background-image: url("https://vfs.cloud9.us-east-2.amazonaws.com/vfs/882cfecfbf3348af9683a6f263c383c9/preview/Lesson7/images/header.jpg");
+    background-image: url("../images/header.jpg");
     width: 100%;        //横幅いっぱいに表示する
     height: 500px;    //縦は500pxで固定する
     background-size: cover;
@@ -67,13 +67,13 @@ header {
 }
 
 // desktop
-@media (max-width: 769px) {    
+@media (max-width: 768px) {    
     //レスポンシブサイトは768px以下の時表示
   /* Header
   ------------------------------------------------------------*/
 header {
   .header-image{
-    background-image: url("https://vfs.cloud9.us-east-2.amazonaws.com/vfs/882cfecfbf3348af9683a6f263c383c9/preview/Lesson7/images/header.jpg");
+    background-image: url("../images/header.jpg");
     width: 100%;        //横幅いっぱいに表示する
     height: 250px;    //縦は250pxで固定する
     background-size: cover;
@@ -141,7 +141,7 @@ section {
 }
 
 // desktop
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
@@ -179,8 +179,7 @@ footer {
 
 
 // desktop
-@media (max-width: 769px) {
-  〜〜
+@media (max-width: 768px) {
   .button-readmore {
    &:hover {
     background-color: darken($keyColor, 10%);

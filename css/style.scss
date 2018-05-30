@@ -1,0 +1,189 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #bea300;
+$keyColor: #14c0c9;
+$fontColor: #4c4c4c;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em;
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Header 消さない
+------------------------------------------------------------*/
+header {
+  .header-image{
+    background-image: url("https://vfs.cloud9.us-east-2.amazonaws.com/vfs/882cfecfbf3348af9683a6f263c383c9/preview/Lesson7/images/header.jpg");
+    width: 100%;        //横幅いっぱいに表示する
+    height: 500px;    //縦は500pxで固定する
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+// desktop
+@media (max-width: 769px) {    
+    //レスポンシブサイトは768px以下の時表示
+  /* Header
+  ------------------------------------------------------------*/
+header {
+  .header-image{
+    background-image: url("https://vfs.cloud9.us-east-2.amazonaws.com/vfs/882cfecfbf3348af9683a6f263c383c9/preview/Lesson7/images/header.jpg");
+    width: 100%;        //横幅いっぱいに表示する
+    height: 250px;    //縦は250pxで固定する
+    background-size: cover;
+    background-position: center center;
+  }
+}
+}
+
+/* ここまで ヘッダー */
+
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center;
+  }
+  h2 {
+    @extend .abel;
+    font-size: 3.2rem;
+    @extend .uppercase;
+  }
+}
+
+// Columns ３カラムの部分を作る
+#Columns{        //#から始まるのはid
+  background-color: $subColor;
+  .container {
+    @include display-flex;
+    justify-content: space-between;
+  }
+  h2 {
+    color: $baseColor;
+    margin-bottom: 60px;
+  }
+  .box1 {
+//    @include flex(1);
+    margin: 10px 10px;
+    padding: 0px;
+    background-color: $keyColor;
+    color: $fontColor;
+//    @include border-radius(4px);
+//    @include box-sizing(border-box);
+  }
+    .box2 {
+//    @include flex(1);
+    margin: 0px;
+    padding: 20px;
+    background-color: $keyColor;
+//    @include border-radius(4px);
+//    @include box-sizing(border-box);
+  }
+  h3 {
+    @extend .abel;
+    @extend .uppercase;
+    color: $keyColor;
+    background-color: #fff;
+//    margin-bottom:10px;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}
+
+// desktop
+@media (max-width: 769px) {
+  .container {
+    flex-direction: column;
+  }
+    .box1 {
+//    @include flex(1);
+    margin: 10px 10px;
+    background-color: $baseColor;
+//    @include border-radius(4px);
+//    @include box-sizing(border-box);
+  }
+}
+
+/* Footer
+------------------------------------------------------------*/
+footer {
+  background-color: $keyColor;
+  padding: 10px 0;
+  text-align: center;
+  color: #FFF;
+  .button-readmore {
+    margin: auto;
+    text-align: center;
+    padding: 5px 0;
+    width: 180px;
+    display: block;
+    color: #FFF;
+    font-weight: bold;
+    background-color: $subColor;
+    @extend .abel;
+    @extend .uppercase;
+    @include border-radius(4px);
+    font-size: 1rem;
+  }
+}
+
+
+// desktop
+@media (max-width: 769px) {
+  〜〜
+  .button-readmore {
+   &:hover {
+    background-color: darken($keyColor, 10%);
+    }
+  }
+}
